@@ -1,0 +1,99 @@
+/* Global Styles for Game Library Management System */
+/* Dark theme with purple accent colors */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0c29;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1b4b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
+
+/* Form control focus styles */
+.form-control:focus {
+  background: rgba(30, 27, 75, 0.9) !important;
+  border-color: #6366f1 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Form control placeholder */
+.form-control::placeholder {
+  color: #475569 !important;
+}
+
+/* Link styles */
+a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c4b5fd;
+}
+
+/* Button transitions */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Alert customization */
+.alert {
+  border-radius: 12px;
+}
+
+/* Card hover animation */
+.game-card {
+  transition: all 0.3s ease;
+}
+
+/* Navbar link hover */
+.nav-link:hover {
+  color: #a78bfa !important;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Badge styles */
+.badge {
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}

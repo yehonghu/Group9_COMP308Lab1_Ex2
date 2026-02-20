@@ -1,0 +1,26 @@
+{
+  "name": "group9-comp308lab1-ex2-server",
+  "version": "1.0.0",
+  "description": "Game Library Management System - Backend Server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["MERN", "game-library", "express", "mongodb"],
+  "author": "Yehong Hu, Larry Yu, Khaleda Islam",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
