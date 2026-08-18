@@ -6,6 +6,23 @@ import { findGame, genres, library, platformGroups } from './data/catalog'
 
 const COLLECTION_KEY = 'game-library-public-demo-collection-v1'
 
+const coverImages = {
+  'zelda-totk': 'signal-skybound.jpg',
+  'elden-ring': 'signal-liminal-gold.jpg',
+  'god-of-war-ragnarok': 'signal-nine-realms.jpg',
+  'cyberpunk-2077': 'signal-night-signal.jpg',
+  hades: 'signal-underworld.jpg',
+  'red-dead-redemption-2': 'signal-frontier.jpg',
+  'witcher-3': 'signal-wild-hunt.jpg',
+  'hollow-knight': 'signal-deep-hollow.jpg',
+  'stardew-valley': 'signal-new-season.jpg',
+  'baldurs-gate-3': 'signal-party-formed.jpg',
+  minecraft: 'signal-block-field.jpg',
+  'dark-souls-3': 'signal-fading-ember.jpg',
+}
+
+const coverImageSrc = (game) => `${import.meta.env.BASE_URL}images/${coverImages[game.id]}`
+
 const Icon = ({ name, size = 18 }) => {
   const paths = {
     grid: <><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></>,
@@ -27,8 +44,9 @@ const Cover = ({ game, variant = 'card' }) => (
   <div
     className={`game-cover game-cover--${variant}`}
     style={{ '--accent': game.accent, '--accent-2': game.accent2 }}
-    aria-label={`${game.title} abstract catalog cover`}
+    aria-label={`${game.title} original concept catalog cover`}
   >
+    <img className="game-cover__image" src={coverImageSrc(game)} alt="" loading={variant === 'detail' ? 'eager' : 'lazy'} />
     <span className="cover-glow" />
     <span className="cover-grid" />
     <span className="cover-orb cover-orb--one" />
@@ -278,7 +296,7 @@ const Home = ({ collection, onOpen, onToggle }) => {
           <Link to="/collection" className="text-link">View collection <Icon name="arrow" size={16} /></Link>
         </div>
         <div className="signal-grid reveal reveal--delay">
-          {library.slice(5, 9).map((game) => <button key={game.id} type="button" onClick={() => onOpen(game)} className="signal-tile" style={{ '--signal': game.accent }}><span>{game.index}</span><b>{game.title}</b></button>)}
+          {library.slice(5, 9).map((game) => <button key={game.id} type="button" onClick={() => onOpen(game)} className="signal-tile" style={{ '--signal': game.accent }}><img className="signal-tile__image" src={coverImageSrc(game)} alt="" loading="lazy" /><span>{game.index}</span><b>{game.title}</b></button>)}
         </div>
       </section>
 
