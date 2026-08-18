@@ -1,143 +1,69 @@
-# COMP308 Lab Assignment #1 - Exercise 2: Game Library Management System
+# Game Library
 
-- **Group:** Group 9
-- **Members:** Yehong Hu, Larry Yu, Khaleda Islam
-- **Project:** `Group9_COMP308Lab1_Ex2`
+**Game Library** is an interactive catalog and personal collection study. It preserves the original application’s dark indigo atmosphere, React Three Fiber particle field, floating geometry, and 3D game-card foundation while expanding the visitor experience into a public, self-contained product demo.
 
-## 1. Project Overview
+> **Live demo:** `https://yehonghu.github.io/Group9_COMP308Lab1_Ex2/`
 
-This project is a comprehensive Game Library Management System developed using the **MERN stack** (MongoDB, Express.js, React, Node.js). It features a full-fledged REST API for backend operations and a modern, responsive React frontend. A key highlight of this project is the integration of **`three.js`** to create a visually appealing and interactive user interface, including a dynamic 3D background and interactive 3D game cards.
+## Public Experience
 
-## 2. Features
+The published site works without installation, login, a local database, or an API server. It retains the original twelve-game seed catalog and adds a browser-persistent personal shelf.
 
-### 2.1. Backend (Express REST API)
+| Area | Public behavior |
+| --- | --- |
+| Object Index | A spatial hero stage, feature signals, catalog statistics, and a pointer-responsive 3D game card. |
+| Catalog | Full-text search, genre and platform filters, live result count, sorting, detail overlays, and save/remove controls. |
+| My Collection | A browser-persistent personal shelf with saved-game count, average rating, genre count, removal, and reset actions. |
+| Case Notes | A transparent account of the original application foundation and the public demonstration layer. |
 
-- **MVC Architecture:** Organized and maintainable codebase following the Model-View-Controller pattern.
-- **Authentication:** Secure user authentication using **JWT (JSON Web Tokens)** stored in **HTTPOnly cookies**.
-- **Database:** MongoDB with Mongoose for data modeling and interaction.
-- **API Endpoints:**
-    - Full CRUD (Create, Read, Update, Delete) operations for games.
-    - User registration and login.
-    - Management of personal game collections (adding/removing games).
-    - Game search functionality.
+## Design System
 
-### 2.2. Frontend (React)
+The visual system is intentionally continuous with the project’s original design language: deep indigo, violet accents, translucent glass planes, slow spatial motion, and Three.js depth. The upgrade moves those elements from a decorative background into a clear information hierarchy.
 
-- **Modern UI:** Built with functional components, React Hooks, and React-Bootstrap.
-- **User-Friendly Experience:**
-    - User registration and login forms with validation.
-    - A gallery to browse all available games with a real-time search filter.
-    - A personal collection page to view and manage owned games.
-    - Detailed game information modals.
-    - Ability for authenticated users to add new games to the library.
-- **Enhanced UI with `three.js`:**
-    - **Dynamic 3D Background:** An animated particle system and floating geometric shapes create an immersive background across the application.
-    - **3D Game Cards:** On the collection page, featured games are displayed as interactive 3D cards that animate on hover, showcasing the potential of WebGL in a web application.
+Game covers use abstract catalog treatments generated from each record’s controlled color fields and metadata. No copied game-art files are stored in the repository.
 
-## 3. Getting Started
+## Original Engineering Foundation
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+The repository still includes the original full-stack source structure:
 
-### 3.1. Prerequisites
+| Layer | Original implementation |
+| --- | --- |
+| Client | React, Vite, React Router, React Three Fiber, Three.js, and the original game-library components. |
+| Server | Express, MongoDB/Mongoose, JWT authentication, REST routes, game CRUD, and collection endpoints. |
+| Seed data | Twelve original game records with title, genre, platform, release year, developer, rating, and description. |
 
-Make sure you have the following software installed on your system:
+The GitHub Pages build uses a public demo adapter so that the portfolio experience remains fully available without a local Express/MongoDB runtime. The original server is retained for local full-stack exploration.
 
-- [Node.js](https://nodejs.org/) (v18.x or later recommended)
-- [npm](https://www.npmjs.com/) (usually comes with Node.js)
-- [MongoDB](https://www.mongodb.com/try/download/community) (v7.0 or later recommended)
+## Local Development
 
-### 3.2. Installation & Setup
+### Public client
 
-1.  **Clone the repository** or download and unzip the project folder `Group9_COMP308Lab1_Ex2`.
-
-2.  **Setup the Backend Server:**
-
-    ```bash
-    # Navigate to the server directory
-    cd Group9_COMP308Lab1_Ex2/server
-
-    # Install dependencies
-    npm install
-    ```
-
-3.  **Setup the Frontend Client:**
-
-    ```bash
-    # Navigate to the client directory from the root
-    cd ../client
-
-    # Install dependencies
-    npm install
-    ```
-
-### 3.3. Running the Application
-
-1.  **Start MongoDB:**
-    - Ensure your MongoDB server is running. If you installed it as a service, it might start automatically. Otherwise, you may need to start it manually.
-
-2.  **Seed the Database (Optional but Recommended):**
-    - To populate the database with some sample game data, run the seed script from the `server` directory.
-
-    ```bash
-    # From the /server directory
-    node seed.js
-    ```
-
-3.  **Start the Backend Server:**
-
-    ```bash
-    # From the /server directory
-    npm run dev
-    ```
-
-    The server will start on `http://localhost:5000`.
-
-4.  **Start the Frontend Client:**
-
-    ```bash
-    # From the /client directory
-    npm run dev
-    ```
-
-    The React development server will start, and your browser should automatically open to `http://localhost:5173`.
-
-## 4. Project Structure
-
-The project is organized into two main parts: `client` and `server`, following a standard MERN stack monorepo structure.
-
-### 4.1. Backend (`/server`)
-
-```
-/server
-  /config          # Configuration (db, express, etc.)
-  /controllers     # Request handling logic (MVC)
-  /middleware      # Custom middleware (e.g., auth)
-  /models          # Mongoose schemas
-  /routes          # API route definitions
-  .env             # Environment variables
-  package.json     # Dependencies and scripts
-  seed.js          # Database seeder script
-  server.js        # Main server entry point
+```bash
+cd client
+npm install
+npm run dev
 ```
 
-### 4.2. Frontend (`/client`)
+### Original full-stack source
 
-```
-/client
-  /src
-    /components    # Reusable UI components
-    /hooks         # Custom React hooks (e.g., useAuth)
-    /pages         # Page components
-    /services      # API call functions
-    /three         # Three.js components
-    App.jsx        # Main app component with routing
-    main.jsx       # React entry point
-  vite.config.js   # Vite configuration (including proxy)
-  package.json     # Dependencies and scripts
+```bash
+cd server
+npm install
+npm run dev
 ```
 
-## 5. Submission Details
+The original server requires a configured MongoDB connection. The public demo does not.
 
-- **Project Folder Name:** `Group9_COMP308Lab1_Ex2`
-- **Submission File Name:** `Group9_COMP308Lab1_Ex2.zip`
-- **Note:** The `node_modules` folder must be removed before zipping.
+## Build and Publish
+
+The Vite configuration builds the client into the repository’s `docs/` directory and uses the GitHub Pages project base path.
+
+```bash
+cd client
+npm run build
+```
+
+GitHub Pages is configured from `main` → `/docs`.
+
+## Authorship
+
+**Yehong Hu** is the sole author of the current portfolio upgrade, public build, documentation, commits, and deployment configuration.

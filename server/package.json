@@ -9,7 +9,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": ["MERN", "game-library", "express", "mongodb"],
-  "author": "Yehong Hu, Larry Yu, Khaleda Islam",
+  "author": "Yehong Hu",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
