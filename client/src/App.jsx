@@ -193,6 +193,35 @@ const GameTile = ({ game, saved, onOpen, onToggle }) => (
   </article>
 )
 
+const visualSignals = [
+  { id: 'skybound', gameId: 'zelda-totk', index: '01', label: 'Skybound', image: 'signal-skybound.jpg' },
+  { id: 'underworld', gameId: 'hades', index: '05', label: 'Underworld', image: 'signal-underworld.jpg' },
+  { id: 'deep-hollow', gameId: 'hollow-knight', index: '08', label: 'Deep hollow', image: 'signal-deep-hollow.jpg' },
+  { id: 'nine-realms', gameId: 'god-of-war-ragnarok', index: '03', label: 'Nine realms', image: 'signal-nine-realms.jpg' },
+]
+
+const WorldSignals = ({ onOpen }) => (
+  <section className="world-signals page-shell">
+    <div className="world-signals__heading reveal">
+      <div>
+        <p className="eyebrow">Visual signals · Original concept scenes</p>
+        <h2>Four atmospheres,<br /><em>ready to enter.</em></h2>
+      </div>
+      <p>Original visual interpretations make the public demo feel more like a living catalogue. Open a scene to inspect its connected record.</p>
+    </div>
+    <div className="world-atlas reveal reveal--delay">
+      {visualSignals.map((signal) => {
+        const game = findGame(signal.gameId)
+        return <button key={signal.id} type="button" className="world-signal" onClick={() => onOpen(game)} aria-label={`Open ${game.title} details from the ${signal.label} concept scene`}>
+          <img src={`${import.meta.env.BASE_URL}images/${signal.image}`} alt={`Original concept scene: ${signal.label}`} loading="lazy" />
+          <span className="world-signal__wash" />
+          <span className="world-signal__meta"><i>{signal.index} · Original concept</i><strong>{signal.label}</strong><small>Open record <Icon name="arrow" size={14} /></small></span>
+        </button>
+      })}
+    </div>
+  </section>
+)
+
 const Home = ({ collection, onOpen, onToggle }) => {
   const featured = library.filter((game) => game.featured)
   const [activeId, setActiveId] = useState(featured[1].id)
@@ -223,6 +252,8 @@ const Home = ({ collection, onOpen, onToggle }) => {
           <p className="object-label">{active.title} <span>{active.rating.toFixed(1)}</span></p>
         </div>
       </section>
+
+      <WorldSignals onOpen={onOpen} />
 
       <section className="selection-section page-shell">
         <div className="section-heading reveal">
