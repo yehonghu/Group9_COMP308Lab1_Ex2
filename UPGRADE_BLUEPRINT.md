@@ -33,7 +33,7 @@ Do not replace the existing visual language. Retain the indigo-to-violet environ
 | Route | Role | Key interaction |
 | --- | --- | --- |
 | `#/` | Discovery dashboard | Featured game selection, catalog statistics, spatial 3D preview, route entry points. |
-| `#/games` | Full catalog | Text search, genre and platform filters, sort control, detail overlay, save/remove action. |
+| `#/catalog` | Full catalog | Text search, genre and platform filters, sort control, detail overlay, save/remove action. |
 | `#/collection` | Browser-persistent personal shelf | Live counts, rating summary, remove action, empty state, reset action. |
 | `#/about` | Case context | Explains the original MERN + Three.js foundation and the public demo data behavior. |
 
