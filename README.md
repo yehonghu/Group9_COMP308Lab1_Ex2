@@ -4,6 +4,9 @@
 
 > **Live demo:** `https://yehonghu.github.io/Group9_COMP308Lab1_Ex2/`
 
+[![CI](https://github.com/yehonghu/Group9_COMP308Lab1_Ex2/actions/workflows/ci.yml/badge.svg)](https://github.com/yehonghu/Group9_COMP308Lab1_Ex2/actions/workflows/ci.yml)
+[![Last commit](https://img.shields.io/github/last-commit/yehonghu/Group9_COMP308Lab1_Ex2)](https://github.com/yehonghu/Group9_COMP308Lab1_Ex2/commits/main)
+
 ## Public Experience
 
 The published site works without installation, login, a local database, or an API server. It retains the original twelve-game seed catalog and adds a browser-persistent personal shelf.
